@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+const port = process.env.PORT || 3000;
 const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
@@ -98,4 +99,4 @@ app.get('*', (req, res)=>{
         errorMessage : 'page not found'
     })
 })
-app.listen(3000, ()=>console.log('server is running on 3000'))
+app.listen(port, ()=>console.log('server is running on ' + port))
